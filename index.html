@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://kit.fontawesome.com/e5e6abe59a.js" crossorigin="anonymous"></script>
+  <title>Lista de tareas</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__container">
+      <i class="fa-solid fa-list-check"></i>
+      <h1>Lista de tareas</h1>
+    </div>
+  </header>
+  <main>
+    <section class="categories">
+      <div class="categories__container">
+        <h2>Categorías</h2>
+        <form id="category-form">
+          <input type="text" id="category-name" placeholder="Nombre de la categoría" required>
+          <button type="submit">Añadir categoría</button>
+        </form>
+        <ul class="categories__list" id="categories-list"></ul>
+      </div>
+    </section>
+    <section class="tasks">
+      <div class="tasks__container">
+        <div class="tasks__header">
+          <div class="tasks__header-left">
+            <h2>Tareas</h2>
+            <button class="tasks__add" id="add_task" title="Añadir tarea"><i class="fa-solid fa-plus"></i></button>
+          </div>
+          <div class="tasks__header-right">
+            <fieldset>
+              <legend>Seleccionar tareas por categoría</legend>
+              <form id="tasks-by-category">
+                <label for="cat-task">Categoría</label>
+                <select id="cat-task" name="cat-task" required></select>
+                <div class="tasks__buttons">
+                  <button type="submit" title="seleccionar"><i class="fa-solid fa-check"
+                      aria-hidden="true"></i></button>
+                  <button type="reset" title="borrar selección" id="resetButton"><i
+                      class="fa-regular fa-trash-can"></i></button>
+                </div>
+              </form>
+            </fieldset>
+          </div>
+        </div>
+        <div class="tasks__display" id="tasks-display"></div>
+      </div>
+    </section>
+    <div id="task_popup" class="popup">
+      <div class="popup__container">
+        <span id="close_popup" class="popup__close" title="cerrar">&times;</span>
+        <h2 class="popup__head">Crear Nueva Tarea</h2>
+        <form id="task-form" class="popup__form">
+          <label for="task-title">Título:</label>
+          <input type="text" id="task-title" name="task-title">
+          <label for="task-description">Descripción:</label>
+          <textarea id="task-description" name="task-description"></textarea>
+          <div class="popup__bottom">
+            <div class="popup__select">
+              <label for="task-category">Categoría:</label>
+              <select id="task-category" name="task-category" required></select>
+            </div>
+            <button type="submit" class="popup__form-submit">Crear Tarea</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer__container">
+      <p>&copy; Daniel Ribes</p>
+      <ul class="footer__rrss">
+        <li><a href="https://www.linkedin.com/in/danielribes/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+        <li><a href="https://github.com/darifor" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+        <li><a href="https://darifor.github.io/portfolio/" target="_blank"><i class="fa-solid fa-globe"></i></a></li>
+      </ul>
+    </div>
+  </footer>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

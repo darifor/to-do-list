@@ -1,0 +1,102 @@
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(175, 152, 152, 0.5);
+    backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+
+    &__container {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        width: 400px;
+        text-align: center;
+        backdrop-filter: blur(15px);
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__head {
+        margin-bottom: 10px;
+    }
+
+    &__close {
+        font-size: 1.3rem;
+        position: absolute;
+        padding: 3px 7px;
+        top: 0;
+        right: 0;
+        background-color: red;
+        color: white;
+
+        &:hover {
+            cursor: pointer;
+            font-weight: bold;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+
+        & input {
+            min-width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            margin-bottom: 10px;
+        }
+
+        & select {
+            padding: 5px;
+            min-width: 114px;
+        }
+
+        & label {
+            font-size: 1.2rem;
+        }
+
+        & textarea {
+            min-width: 100%;
+            height: 100px;
+            padding: 10px;
+            resize: both;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            margin-bottom: 10px;
+        }
+
+        & select {
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        &-submit {
+            padding: 5px 8px;
+            text-transform: uppercase;
+        }
+    }
+
+    &__bottom {
+        min-width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: last baseline;
+    }
+
+    &__select {
+        display: flex;
+        flex-direction: column;
+    }
+}

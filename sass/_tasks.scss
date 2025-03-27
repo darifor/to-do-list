@@ -1,0 +1,214 @@
+@use "mixins" as *;
+@use "variables" as *;
+
+.tasks {
+  &__container {
+    background-color: #ccc;
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 20px 5px rgb(79, 79, 216);
+  }
+
+  &__header {
+    margin-bottom: 20px;
+
+    @include breakpoint(tablet) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      text-shadow: -1px -1px white;
+
+      @include breakpoint(tablethorizontal) {
+        font-size: 2rem;
+      }
+    }
+
+    &-right {
+      min-width: 50%;
+      display: none;
+
+      @include breakpoint(tablet) {
+        min-width: 70%;
+      }
+
+      @include breakpoint(tablethorizontal) {
+        min-width: 60%;
+      }
+
+      @include breakpoint(desktop) {
+        min-width: 50%;
+      }
+
+      form {
+        text-align: center;
+
+        @include breakpoint(tablet) {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+        }
+      }
+
+      fieldset {
+        padding: 10px 20px;
+
+        select {
+          min-width: 100px;
+          border: none;
+          border-radius: 5px;
+          outline: none;
+          padding: 5px;
+          margin-bottom: 15px;
+
+          @include breakpoint(tablet) {
+            margin-left: 10px;
+          }
+        }
+
+        button {
+          font-size: 1.2rem;
+          background-color: transparent;
+          border: 0;
+          // margin-left: 20px;
+          cursor: pointer;
+
+          &:hover {
+            animation: oscilar 0.3s ease-in-out infinite alternate;
+            color: red;
+          }
+        }
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    @include breakpoint(tablet) {
+      margin-left: auto;
+      margin-right: 40px;
+      gap: 50px;
+    }
+  }
+
+  &__display {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  &__single {
+    border-radius: 10px;
+    padding: 10px;
+    width: auto;
+    font-size: 0.9rem;
+    overflow-y: auto;
+    background-color: rgb(228, 214, 198);
+
+    &.complete {
+      border: 1px solid rgb(67, 230, 67);
+      box-shadow: inset 0 0 10px 1px rgb(67, 230, 67);
+
+      & button {
+        color: rgb(67, 230, 67);
+      }
+    }
+
+    &.incomplete {
+      border: 1px solid red;
+      box-shadow: inset 0 0 10px 1px red;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 10px;
+
+    button {
+      font-size: 1.2rem;
+      border: 0;
+      background-color: transparent;
+      cursor: pointer;
+      color: red;
+
+      &:hover {
+        animation: oscilar 0.3s ease-in-out infinite alternate;
+      }
+    }
+  }
+
+  @keyframes oscilar {
+    0% {
+      transform: translateY(0);
+    }
+
+    100% {
+      transform: translateY(-5px);
+    }
+  }
+
+  &__add {
+    width: 100%;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 1.5rem;
+    color: red;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+    margin-bottom: 10px;
+
+    @include breakpoint(tablet) {
+      width: 40px;
+      border-radius: 50%;
+    }
+
+    @include breakpoint(tablethorizontal) {
+      height: 50px;
+      width: 50px;
+      font-size: 1.8rem;
+    }
+
+    &:hover {
+      color: white;
+      background-color: red;
+    }
+  }
+
+  &__date {
+    margin-bottom: 15px;
+  }
+
+  &__category::before {
+    content: "Categoría: ";
+    font-weight: bold;
+  }
+
+  &__state::before {
+    content: "Estado: ";
+    font-weight: bold;
+  }
+
+  &__date::before {
+    content: "Fecha: ";
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,50 @@
+@use "mixins" as *;
+@use "variables" as *;
+
+.categories {
+  &__container {
+    background-color: #ccc;
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px 5px rgb(106, 106, 211);
+
+    h2 {
+      margin-bottom: 10px;
+      text-shadow: -1px -1px white;
+
+      @include breakpoint(tablethorizontal) {
+        font-size: 2rem;
+      }
+    }
+
+    input {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 25px;
+    margin-top: 10px;
+  }
+
+  &__button {
+    color: red;
+    background-color: transparent;
+    padding: 0 3px;
+    cursor: pointer;
+    border: 0;
+    margin-left: 3px;
+    font-size: 1rem;
+  }
+
+  & input[type="text"],
+  & button[type="submit"] {
+    padding: 5px 10px;
+  }
+}
