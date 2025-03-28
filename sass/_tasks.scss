@@ -5,11 +5,16 @@
   &__container {
     background-color: #ccc;
     max-width: 90%;
+    min-height: calc(100vh - 376px);
     margin: 20px auto;
     padding: 10px 20px;
     border: 1px solid black;
     border-radius: 10px;
     box-shadow: 5px 5px 20px 5px rgb(79, 79, 216);
+
+    @include breakpoint(tablethorizontal) {
+      min-height: calc(100vh - 399px);
+    }
   }
 
   &__header {
